@@ -80,7 +80,6 @@ VersionNumber(major::Integer, minor::Integer = 0, patch::Integer = 0,
         map(x->x isa Integer ? UInt64(x) : String(x), bld))
 
 VersionNumber(v::Tuple) = VersionNumber(v...)
-VersionNumber(v::VersionNumber) = v
 
 function print(io::IO, v::VersionNumber)
     v == typemax(VersionNumber) && return print(io, "∞")
@@ -289,35 +288,33 @@ function banner(io::IO = stdout)
 
     commit_date = isempty(Base.GIT_VERSION_INFO.date_string) ? "" : " ($(split(Base.GIT_VERSION_INFO.date_string)[1]))"
 
-    if get(io, :color, false)::Bool
+    if get(io, :color, false)
         c = text_colors
         tx = c[:normal] # text
         jl = c[:normal] # julia
-        d1 = c[:bold] * c[:blue]    # first dot
-        d2 = c[:bold] * c[:red]     # second dot
-        d3 = c[:bold] * c[:green]   # third dot
-        d4 = c[:bold] * c[:magenta] # fourth dot
+        d1 = c[:bold] * c[:"#B88500"]    # first dot
+        d2 = c[:bold] * c[:"#790000"]     # second dot
+        d3 = c[:bold] * c[:"#006200"]   # third dot
+        d4 = c[:bold] * c[:"#00008B"] # fourth dot
 
-        print(io,"""               $(d3)_$(tx)
-           $(d1)_$(tx)       $(jl)_$(tx) $(d2)_$(d3)(_)$(d4)_$(tx)     |  Documentation: https://docs.julialang.org
-          $(d1)(_)$(jl)     | $(d2)(_)$(tx) $(d4)(_)$(tx)    |
-           $(jl)_ _   _| |_  __ _$(tx)   |  Type \"?\" for help, \"]?\" for Pkg help.
-          $(jl)| | | | | | |/ _` |$(tx)  |
-          $(jl)| | |_| | | | (_| |$(tx)  |  Version $(VERSION)$(commit_date)
-         $(jl)_/ |\\__'_|_|_|\\__'_|$(tx)  |  $(commit_string)
-        $(jl)|__/$(tx)                   |
-
-        """)
+	print(io,""" 		$(d1)_$(tx)
+	       $(d1)(_)$(tx)	    $(d2)_$(tx)
+ 	 $(jl)_   _  ____ $(d4)_$(d2)(_)$(d3)_$(jl)       ___$(tx)   	|  Documentation: https://docs.julialang.org
+	$(jl)| | / /|  __$(d4)(_)$(tx) $(d3)(_)$(jl)     |   \\$(tx) 	|
+	$(jl)| |/ / | |_  _____  ___ |    \\$(tx) 	| Type \"?\" for help, \"]?\" for Pkg help.
+	$(jl)|    | |  _||  _  ||  _|| [] |$(tx) 	| Type \";\" for shell emulator. 
+	$(jl)| |\\ \\ | |  | | | || |  |    /$(tx) 	|
+	$(jl)|_| \\_\\|_|  |_| |_||_|  |___/$(tx) 	|
+	
+    	""")
     else
         print(io,"""
-                       _
-           _       _ _(_)_     |  Documentation: https://docs.julialang.org
-          (_)     | (_) (_)    |
-           _ _   _| |_  __ _   |  Type \"?\" for help, \"]?\" for Pkg help.
-          | | | | | | |/ _` |  |
-          | | |_| | | | (_| |  |  Version $(VERSION)$(commit_date)
-         _/ |\\__'_|_|_|\\__'_|  |  $(commit_string)
-        |__/                   |
+ 	 _   _  ____             ___  	|  Documentation: https://docs.julialang.org
+	| | / /|  __|           |   \\	|
+	| |/ / | |_  _____  ___ |    \\	|  Type \"?\" for help, \"]?\" for Pkg help. 
+	|    | |  _||  _  ||  _|| [] |	|  Type \";\" for shell emulator. 
+	| |\\ \\ | |  | | | || |  |    /	|
+	|_| \\_\\|_|  |_| |_||_|  |___/	|
 
         """)
     end
