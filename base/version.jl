@@ -292,10 +292,10 @@ function banner(io::IO = stdout)
         c = text_colors
         tx = c[:normal] # text
         jl = c[:normal] # julia
-        d1 = c[:bold] * c[:"#B88500"]    # first dot
-        d2 = c[:bold] * c[:"#790000"]     # second dot
-        d3 = c[:bold] * c[:"#006200"]   # third dot
-        d4 = c[:bold] * c[:"#00008B"] # fourth dot
+        d1 = c[:bold] * c[:"#ffbf00"]    # first dot
+        d2 = c[:bold] * c[:"#cc0000"]     # second dot
+        d3 = c[:bold] * c[:"#008000"]   # third dot
+        d4 = c[:bold] * c[:"#2a52be"] # fourth dot
 
 	print(io,""" 		$(d1)_$(tx)
 	       $(d1)(_)$(tx)	    $(d2)_$(tx)
