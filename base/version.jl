@@ -300,9 +300,9 @@ function banner(io::IO = stdout)
 	print(io,"""
 			
  		$(d1)_$(tx)
-       $(d1)(_)$(tx)   $(d2)_$(tx)
- $(jl)_   _  ____ $(d4)_$(d2)(_)$(d3)_$(jl)       ___$(tx)   	|  https://docs.julialang.org
-$(jl)| | / /|  __$(d4)(_)$(tx) $(d3)(_)$(jl)     |   \\$(tx) 	|
+       $(d1)(_)$(tx)   $(d3)_$(tx)
+ $(jl)_   _  ____ $(d2)_$(d3)(_)$(d4)_$(jl)       ___$(tx)   	|  https://docs.julialang.org
+$(jl)| | / /|  __$(d2)(_)$(tx) $(d4)(_)$(jl)     |   \\$(tx) 	|
 $(jl)| |/ / | |_  _____  ___ |    \\$(tx) 	| Type \"?\" for help, \"]?\" for Pkg help.
 $(jl)|    | |  _||  _  ||  _|| [] |$(tx) 	| Type \";\" for shell emulator. 
 $(jl)| |\\ \\ | |  | | | || |  |    /$(tx) 	|
