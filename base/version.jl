@@ -297,10 +297,9 @@ function banner(io::IO = stdout)
         d3 = c[:bold] * c[:green]   # third dot
         d4 = c[:bold] * c[:blue] # fourth dot
 
-	print(io,"""
-			
- 		$(d1)_$(tx)
-       $(d1)(_)$(tx)   $(d3)_$(tx)
+	print(io,"""			
+ 	$(d1)_$(tx)
+       $(d1)(_)$(tx)     $(d3)_$(tx)
  $(jl)_   _  ____ $(d2)_$(d3)(_)$(d4)_$(jl)       ___$(tx)   	|  https://docs.julialang.org
 $(jl)| | / /|  __$(d2)(_)$(tx) $(d4)(_)$(jl)     |   \\$(tx) 	|
 $(jl)| |/ / | |_  _____  ___ |    \\$(tx) 	| Type \"?\" for help, \"]?\" for Pkg help.
