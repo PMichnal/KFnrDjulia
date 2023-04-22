@@ -297,16 +297,19 @@ function banner(io::IO = stdout)
         d3 = c[:bold] * c[:green]   # third dot
         d4 = c[:bold] * c[:blue] # fourth dot
 
-	print(io,""" 		$(d1)_$(tx)
-	       $(d1)(_)$(tx)	    $(d2)_$(tx)
- 	 $(jl)_   _  ____ $(d4)_$(d2)(_)$(d3)_$(jl)       ___$(tx)   	|  Documentation: https://docs.julialang.org
-	$(jl)| | / /|  __$(d4)(_)$(tx) $(d3)(_)$(jl)     |   \\$(tx) 	|
-	$(jl)| |/ / | |_  _____  ___ |    \\$(tx) 	| Type \"?\" for help, \"]?\" for Pkg help.
-	$(jl)|    | |  _||  _  ||  _|| [] |$(tx) 	| Type \";\" for shell emulator. 
-	$(jl)| |\\ \\ | |  | | | || |  |    /$(tx) 	|
-	$(jl)|_| \\_\\|_|  |_| |_||_|  |___/$(tx) 	|
+	print(io,"""
+			
+ 		$(d1)_$(tx)
+       $(d1)(_)$(tx)   $(d2)_$(tx)
+ $(jl)_   _  ____ $(d4)_$(d2)(_)$(d3)_$(jl)       ___$(tx)   	|  https://docs.julialang.org
+$(jl)| | / /|  __$(d4)(_)$(tx) $(d3)(_)$(jl)     |   \\$(tx) 	|
+$(jl)| |/ / | |_  _____  ___ |    \\$(tx) 	| Type \"?\" for help, \"]?\" for Pkg help.
+$(jl)|    | |  _||  _  ||  _|| [] |$(tx) 	| Type \";\" for shell emulator. 
+$(jl)| |\\ \\ | |  | | | || |  |    /$(tx) 	|
+$(jl)|_| \\_\\|_|  |_| |_||_|  |___/$(tx) 	| Mod na Serock
 	
     	""")
+			
     else
         print(io,"""
  	 _   _  ____             ___  	|  Documentation: https://docs.julialang.org
