@@ -300,7 +300,7 @@ function banner(io::IO = stdout)
 			
 	print(io,"""			
  
-                   $(d1)_   $(d3)_$(tx)
+              $(d1)_   $(d3)_$(tx)
  $(jl)_   _  ____ $(d1)( )$(d2)|$(d3)( )$(d4)|$(jl)    ___$(tx)   	|  https://docs.julialang.org
 $(jl)| | / /|  __| $(d1)|$(d2)(_)$(d3)|$(d4)(_)$(jl)  |   \\$(tx) 	|
 $(jl)| |/ / | |_  _____  ___ |    \\$(tx) 	| Type \"?\" for help, \"]?\" for Pkg help.
