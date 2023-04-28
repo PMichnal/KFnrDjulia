@@ -290,18 +290,19 @@ function banner(io::IO = stdout)
 
     if get(io, :color, false)
         c = text_colors
-        tx = c[:normal] # text
+         tx = c[:normal] # text
         jl = c[:normal] # julia
         d1 = c[:bold] * c[:yellow]    # first dot
         d2 = c[:bold] * c[:red]     # second dot
         d3 = c[:bold] * c[:green]   # third dot
         d4 = c[:bold] * c[:blue] # fourth dot
-
+			
+			
 	print(io,"""			
- 	$(d1)_$(tx)
-       $(d1)(_)$(tx)     $(d3)_$(tx)
- $(jl)_   _  ____ $(d2)_$(d3)(_)$(d4)_$(jl)       ___$(tx)   	|  https://docs.julialang.org
-$(jl)| | / /|  __$(d2)(_)$(tx) $(d4)(_)$(jl)     |   \\$(tx) 	|
+ 
+                   $(d1)_   $(d3)_$(tx)
+ $(jl)_   _  ____ $(d1)( )$(d2)|$(d3)( )$(d4)|$(jl)    ___$(tx)   	|  https://docs.julialang.org
+$(jl)| | / /|  __| $(d1)|$(d2)(_)$(d3)|$(d4)(_)$(jl)  |   \\$(tx) 	|
 $(jl)| |/ / | |_  _____  ___ |    \\$(tx) 	| Type \"?\" for help, \"]?\" for Pkg help.
 $(jl)|    | |  _||  _  ||  _|| [] |$(tx) 	| Type \";\" for shell emulator. 
 $(jl)| |\\ \\ | |  | | | || |  |    /$(tx) 	|
@@ -310,12 +311,12 @@ $(jl)|_| \\_\\|_|  |_| |_||_|  |___/$(tx) 	| Mod na Serock
     	""")
 			
     else
-        print(io,"""
- 	 _   _  ____             ___  	|  Documentation: https://docs.julialang.org
-	| | / /|  __|           |   \\	|
+        print(io,"""   _   _
+ 	 _   _  ____  ( )|( )|   ___  	|  Documentation: https://docs.julialang.org
+	| | / /|  __|  |(_)|(_) |   \\	|
 	| |/ / | |_  _____  ___ |    \\	|  Type \"?\" for help, \"]?\" for Pkg help. 
 	|    | |  _||  _  ||  _|| [] |	|  Type \";\" for shell emulator. 
-	| |\\ \\ | |  | | | || |  |    /	|
+	| |\\ \\ | |  | | | || |  |    /|
 	|_| \\_\\|_|  |_| |_||_|  |___/	|
 
         """)
